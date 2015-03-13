@@ -40,6 +40,7 @@ class AirplanesController < ApplicationController
   # PATCH/PUT /airplanes/1
   # PATCH/PUT /airplanes/1.json
   def update
+    binding.pry
     respond_to do |format|
       if @airplane.update(airplane_params)
         format.html { redirect_to @airplane, notice: 'Airplane was successfully updated.' }
