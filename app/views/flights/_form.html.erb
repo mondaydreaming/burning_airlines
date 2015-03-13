@@ -29,13 +29,13 @@
   </div>
 
 <!-- SELECT FLIGHT_ID -->
-  <label for="plane_id">Plane:</label>
-  <select name="plane_id" id="plane_id">
+  <label for="airplane_id">Plane:</label>
+  <select name="airplane_id" id="airplane_id">
 
     <option></option>
 
     <% Airplane.all.each do |airplane| %>
-      <option <%= "selected" if airplane.id == @flight.plane_id %> value="<%= airplane.id %>"><%= airplane.name %></option>
+      <option <%= "selected" if airplane.id == @flight.airplane_id %> value="<%= airplane.id %>"><%= airplane.name %></option>
     <% end %>
 
   </select>
