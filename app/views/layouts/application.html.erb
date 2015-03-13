@@ -52,22 +52,7 @@
       </tr>
     </thead>
 
-    <tbody>
-      <% Flight.pluck(:origin).each do |flight| %>
-        <tr>
-          <td><%= flight.flight_number %></td>
-          <td><%= flight.origin %></td>
-          <td><%= flight.destination %></td>
-          <td><%= flight.date %></td>
-          <td><%= flight.airplane.name %></td>
-          <!-- UPDATE TO INC ROW*AISLE - TOTAL AVAIL -->
-          <td><%= flight.airplane.rows*flight.airplane.aisles %></td>
-          <td><%= link_to 'Show', flight %></td>
-          <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
-          <td><%= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
+
   </table>
 </script>
 
