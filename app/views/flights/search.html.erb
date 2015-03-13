@@ -1,24 +1,21 @@
 <h1>Search Flights</h1>
-
-<p>Drop down search for from and to</p>
 <p>Render all flights that fit this description</p>
-
 
 <form>
   <select name="origin">
       <option value="">Where are you?</option>
-        <% Flight.all.each do |city|%>
+        <% Flight.pluck(:origin).uniq.each do |city|%>
             <div class="city">
-                <option value="<%=city.origin%>"><%=city.origin%></option>
+                <option value="<%=city%>"><%=city%></option>
             </div>
         <%end%>
   </select>
 
   <select name="destination">
       <option value="">Where are you going?</option>
-        <% Flight.all.each do |city|%>
+        <% Flight.pluck(:destination).uniq.each do |city|%>
             <div class="city">
-                <option value="<%=city.destination%>"><%=city.destination%></option>
+                <option value="<%=city%>"><%=city%></option>
             </div>
         <%end%>
   </select>
