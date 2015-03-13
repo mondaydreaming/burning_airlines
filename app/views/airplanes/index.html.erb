@@ -8,7 +8,6 @@
       <th>Name</th>
       <th>Rows</th>
       <th>Aisles</th>
-      <th>Timestamps</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
         <td><%= airplane.name %></td>
         <td><%= airplane.rows %></td>
         <td><%= airplane.aisles %></td>
-        <td><%= airplane.timestamps %></td>
         <td><%= link_to 'Show', airplane %></td>
         <td><%= link_to 'Edit', edit_airplane_path(airplane) %></td>
         <td><%= link_to 'Destroy', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
