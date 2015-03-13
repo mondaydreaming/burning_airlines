@@ -7,7 +7,7 @@
 #  origin        :string
 #  destination   :string
 #  date          :datetime
-#  plane_id      :integer
+#  airplane_id   :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #

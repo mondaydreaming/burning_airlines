@@ -24,7 +24,7 @@
         <td><%= flight.date %></td>
         <td><%= flight.airplane.name %></td>
         <!-- UPDATE TO INC ROW*AISLE - TOTAL AVAIL -->
-        <td><%= flight.airplane_id %></td>
+        <td><%= flight.airplane.rows*flight.airplane.aisles %></td>
         <td><%= link_to 'Show', flight %></td>
         <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
         <td><%= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
