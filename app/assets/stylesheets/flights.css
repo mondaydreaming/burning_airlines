@@ -1,0 +1,11 @@
+div#seats div {
+      height: 50px;
+      width: 50px;
+      background: black;
+      border: 2px solid yellow;
+      color: white;
+      line-height: 50px;
+      text-align: center;
+      font-size: 25px;
+      display: inline-block;
+    }
