@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore
-//= require backbone
+//= require lib/underscore
+//= require lib/backbone
+//= require lib/backbone-forms
 //= require burning_airlines
 //= require_tree ../templates
 //= require_tree ./models
