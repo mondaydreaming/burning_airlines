@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root :to => 'airplanes#new'
+  root :to => 'flights#search'
+
+  get '/search' => 'flights#search'
 
   resources :reservations
 
