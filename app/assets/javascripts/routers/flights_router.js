@@ -5,7 +5,7 @@ var BurningAirlines = BurningAirlines || {};
 
 BurningAirlines.Routers.Flights = Backbone.Router.extend({
   routes: {
-    // '': 'index',
+    '': 'index',
     'flights/:id': 'viewFlight'
   },
   // index: function () {
@@ -13,7 +13,7 @@ BurningAirlines.Routers.Flights = Backbone.Router.extend({
   // },
 
   viewFlight: function (id) {
-    $("#main").empty()
+    $("#main").empty();
     console.log('viewFlight');
     BurningAirlines.Collections.flights.fetch().done(function () {
       var currentFlight = BurningAirlines.Collections.flights.get(id);

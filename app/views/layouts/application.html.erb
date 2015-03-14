@@ -58,13 +58,27 @@
 </script>
 
 <script id="individualFlightView-template" type="text/x-underscore-template">
-ID: {{id}}
-Flight Number: {{flight_number}}
-Origin: {{origin}}
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Flight Number</th>
+      <th>Origin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{id}}</td>
+      <td>{{flight_number}}</td>
+      <td>{{origin}}</td>
+    </tr>
+  </tbody>
+
+</table>
 </script>
 
+<!-- DISPLAY SEATING PLAN -->
 <div id="seats">
-
 </div>
 
 
