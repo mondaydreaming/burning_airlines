@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'backbone-on-rails', '~> 1.1.2.0'
 gem 'handlebars'
 gem 'devise'
+gem 'bootstrap-sass'
 
 group :development do
  gem 'pry-rails'

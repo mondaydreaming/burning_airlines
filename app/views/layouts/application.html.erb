@@ -5,39 +5,43 @@
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
-<!-- FOR DEV ONLY TO BE DELETED -->
-<div class="nav">
-  <ul>
-    <li><a href="/airplanes">Airplanes</a></li>
-    <li><a href="/flights">Flights</a></li>
-  </ul>
-</div>
+<!-- FOR DEV ONLY: TO BE DELETED -->
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <ul>
+      <li><a href="/airplanes">Airplanes</a></li>
+      <li><a href="/flights">Flights</a></li>
+    </ul>
+  </div>
 
-<!-- DEVISE SIGNIN -->
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+  <!-- DEVISE SIGNIN -->
+  <p class="navbar-text pull-right">
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
 
-<!-- DEVISE NOTIFICATIONS -->
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <!-- DEVISE NOTIFICATIONS -->
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+</nav>
 
-<div id="main">
-<%= yield %>
-</div>
+  <div id="main">
+  <%= yield %>
+  </div>
+
 
 <!-- TEMPLATE FOR FLIGHT SEARCH -->
 <script id="flightListView-template" type="text/x-underscore-template">
