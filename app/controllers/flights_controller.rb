@@ -70,7 +70,7 @@ class FlightsController < ApplicationController
     if params[:origin] && params[:destination]
       @flight = Flight.where(:origin => params[:origin], :destination => params[:destination])
     end
-    binding.pry
+    # binding.pry
 
     # Preparing for Backbone
     # if origin && destination
