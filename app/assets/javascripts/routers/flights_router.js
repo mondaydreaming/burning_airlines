@@ -12,8 +12,17 @@ BurningAirlines.Routers.Flights = Backbone.Router.extend({
   //   console.log('backbone index');
   // },
 
-  viewFlight: function () {
+  viewFlight: function (id) {
+    $("#main").empty()
     console.log('viewFlight');
+    BurningAirlines.Collections.flights.fetch().done(function () {
+      var currentFlight = BurningAirlines.Collections.flights.get(id);
+      var individualFlightHTML = $("#individualFlightView-template").html();
+      var individualFlightHTMLTemplate = _.template(individualFlightHTML);
+
+      $("#main").append(individualFlightHTMLTemplate(   currentFlight.attributes  ));
+      // BurningAirlines.Collections.flights.fetch({  data: { origin: "Sydney", destination: "Melbourne"  }  })
+    });
   }
 
 });

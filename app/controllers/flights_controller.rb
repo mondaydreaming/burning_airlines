@@ -4,7 +4,11 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    if params[:origin] && params[:destination]
+      search(params[:origin], params[:destination])
+    else 
+      @flights = Flight.all
+    end
   end
 
   # GET /flights/1
@@ -61,7 +65,18 @@ class FlightsController < ApplicationController
     end
   end
 
-  def search
+  def search( origin = nil, destination = nil )
+    # binding.pry
+    if params[:origin] && params[:destination]
+      @flight = Flight.where(:origin => params[:origin], :destination => params[:destination])
+    end
+    binding.pry
+
+    # Preparing for Backbone
+    # if origin && destination
+    #   binding.pry
+    # end
+
   end
 
   private

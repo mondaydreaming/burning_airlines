@@ -2,21 +2,19 @@
 <p>Render all flights that fit this description</p>
 
 <form>
-  <select name="origin">
+  <select name="origin" id="origin">
       <option value="">Where are you?</option>
         <% Flight.pluck(:origin).uniq.each do |city|%>
-            <div class="city">
-                <option value="<%=city%>"><%=city%></option>
-            </div>
+            <!-- <div class="city"> -->
+            <option value="<%= city %>" id="<%= city %>"><%= city %></option>
+            <!-- </div> -->
         <%end%>
   </select>
 
-  <select name="destination">
+  <select name="destination" id="destination">
       <option value="">Where are you going?</option>
         <% Flight.pluck(:destination).uniq.each do |city|%>
-            <div class="city">
-                <option value="<%=city%>"><%=city%></option>
-            </div>
+          <option value="<%=city%>" id="<%= city %>"><%=city%></option>
         <%end%>
   </select>
 

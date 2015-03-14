@@ -54,12 +54,17 @@
 //   });
 
 // });
+_.templateSettings = {
+  interpolate: /\{\{(.+?)\}\}/g
+};
+
 var BurningAirlines = BurningAirlines || {};
 
   $(document).ready(function() {
     
     BurningAirlines.routers = new BurningAirlines.Routers.Flights();
-
+    BurningAirlines.Collections.flights = new BurningAirlines.Collections.Flights();
+    // debugger;
     Backbone.history.start({
       pushState: false
     });

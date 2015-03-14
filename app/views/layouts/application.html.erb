@@ -35,10 +35,12 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
+<div id="main">
 <%= yield %>
+</div>
 
 <!-- TEMPLATE FOR FLIGHT SEARCH -->
-<script>  
+<script id="flightListView-template" type="text/x-underscore-template">
   <table>
     <thead>
       <tr>
@@ -52,8 +54,11 @@
       </tr>
     </thead>
 
-
   </table>
+</script>
+
+<script id="individualFlightView-template" type="text/x-underscore-template">
+{{id}}{{flight_number}}{{origin}}
 </script>
 
 
