@@ -20,7 +20,7 @@ BurningAirlines.Routers.Flights = Backbone.Router.extend({
       var individualFlightHTML = $("#individualFlightView-template").html();
       var individualFlightHTMLTemplate = _.template(individualFlightHTML);
 
-      $("#main").append(individualFlightHTMLTemplate(   currentFlight.attributes  ));
+      $("#main").append(individualFlightHTMLTemplate( currentFlight.attributes ));
       // BurningAirlines.Collections.flights.fetch({  data: { origin: "Sydney", destination: "Melbourne"  }  })
     });
   }
