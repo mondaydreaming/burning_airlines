@@ -18,6 +18,10 @@ BurningAirlines.Routers.Flights = Backbone.Router.extend({
     console.log('viewFlight');
     BurningAirlines.Collections.flights.fetch().done(function () {
       var currentFlight = BurningAirlines.Collections.flights.get(id);
+
+      var associatedPlaneId = BurningAirlines.Collections.flights.pluck('airplane_id');
+      var currentAssociatedPlane = BurningAirlines.Collections.airplanes.pluck('name')[associatedPlaneId -1];
+
       var individualFlightHTML = $("#individualFlightView-template").html();
       var individualFlightHTMLTemplate = _.template(individualFlightHTML);
 
@@ -34,19 +38,6 @@ BurningAirlines.Routers.Flights = Backbone.Router.extend({
       // BurningAirlines.Collections.airplanes.fetch({  data: { origin: "Sydney", destination: "Melbourne"  }  })
     });
     });
-  },
-
-  // viewAirplane: function (id) {
-  //   $("#main").empty();
-  //   console.log('viewAirplane');
-  //   BurningAirlines.Collections.airplanes.fetch().done(function () {
-  //     var currentAirplane = BurningAirlines.Collections.airplanes.get(id);
-  //     var individualAirplaneHTML = $("#individualAirplaneView-template").html();
-  //     var individualAirplaneHTMLTemplate = _.template(individualAirplaneHTML);
-
-  //     $("#main").append(individualAirplaneHTMLTemplate( currentAirplane.attributes ));
-  //     // BurningAirlines.Collections.airplanes.fetch({  data: { origin: "Sydney", destination: "Melbourne"  }  })
-  //   });
-  // }
+  }
 
 });
