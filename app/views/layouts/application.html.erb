@@ -114,9 +114,13 @@
   </script>
 
   <!-- DISPLAY SEATING PLAN -->
-  <div id="seats">
+  <script id="airplaneSeatsView-template" type="text/x-underscore-template">  
     <h2>This is the Seating Plan</h2>
-  </div>
+    <div id="seats">
+      {{setPlane}}
+    </div>
+  </script>
+
 
 </div>
 

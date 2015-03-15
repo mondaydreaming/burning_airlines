@@ -69,6 +69,7 @@ var BurningAirlines = BurningAirlines || {};
     BurningAirlines.routers = new BurningAirlines.Routers.Flights();
     BurningAirlines.Collections.flights = new BurningAirlines.Collections.Flights();
     BurningAirlines.Collections.airplanes = new BurningAirlines.Collections.Airplanes();
+    // BurningAirlines.View.flightsIndex = new BurningAirlines.View.FlightsIndex();
     // debugger;
     Backbone.history.start({
       pushState: false

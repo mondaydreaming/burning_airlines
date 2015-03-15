@@ -15,29 +15,31 @@ BurningAirlines.Routers.Flights = Backbone.Router.extend({
 
   viewFlight: function (id) {
     $("#main").empty();
-    console.log('viewFlight');
     BurningAirlines.Collections.flights.fetch().done(function () {
       var currentFlight = BurningAirlines.Collections.flights.get(id);
-
-      var associatedPlaneId = BurningAirlines.Collections.flights.pluck('airplane_id');
-      var currentAssociatedPlane = BurningAirlines.Collections.airplanes.pluck('name')[associatedPlaneId -1];
-
       var individualFlightHTML = $("#individualFlightView-template").html();
       var individualFlightHTMLTemplate = _.template(individualFlightHTML);
-
       $("#main").append(individualFlightHTMLTemplate( currentFlight.attributes ));
       // BurningAirlines.Collections.flights.fetch({  data: { origin: "Sydney", destination: "Melbourne"  }  })
+    });
 
-    console.log('viewAirplane');
     BurningAirlines.Collections.airplanes.fetch().done(function () {
       var currentAirplane = BurningAirlines.Collections.airplanes.get(id);
       var individualAirplaneHTML = $("#individualAirplaneView-template").html();
       var individualAirplaneHTMLTemplate = _.template(individualAirplaneHTML);
-
       $("#main").append(individualAirplaneHTMLTemplate( currentAirplane.attributes ));
+      
+      var airplaneSeatsViewHTML = $("#airplaneSeatsView-template").html();
+      var airplaneSeatsViewHTMLTemplate = _.template(airplaneSeatsViewHTML);
+      $("#main").append(airplaneSeatsViewHTMLTemplate( currentAirplane.attributes ))
       // BurningAirlines.Collections.airplanes.fetch({  data: { origin: "Sydney", destination: "Melbourne"  }  })
     });
-    });
+
+
   }
 
 });
+
+// airplane name being added to the flight model is to be worked out
+// var associatedPlaneId = BurningAirlines.Collections.flights.pluck('airplane_id');
+// var currentAssociatedPlane = BurningAirlines.Collections.airplanes.pluck('name')[associatedPlaneId -1];
