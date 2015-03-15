@@ -1,4 +1,4 @@
-<table>
+<table class = 'table'>
     <thead>
       <tr>
         <th>Date</th>
@@ -10,15 +10,15 @@
     </thead>
 
     <tbody>
-    <tr>
     <% @flights.each do |flight| %>
+    <tr>
       <td><%=flight.date%></td>
       <td><%=flight.flight_number%></td>
       <td><%=flight.origin%></td>
       <td><%=flight.destination%></td>
       <td><%=flight.airplane.name%></td>
-    <% end %>
     </tr>
+    <% end %>
   </tbody>
 
   </table>
