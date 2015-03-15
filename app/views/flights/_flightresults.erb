@@ -1,0 +1,24 @@
+<table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Flight number</th>
+        <th>Origin</th>
+        <th>Destination</th> 
+        <th>Plane</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+    <% @flights.each do |flight| %>
+      <td><%=flight.date%></td>
+      <td><%=flight.flight_number%></td>
+      <td><%=flight.origin%></td>
+      <td><%=flight.destination%></td>
+      <td><%=flight.airplane.name%></td>
+    <% end %>
+    </tr>
+  </tbody>
+
+  </table>

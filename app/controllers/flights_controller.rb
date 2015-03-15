@@ -60,7 +60,7 @@ class FlightsController < ApplicationController
   def destroy
     @flight.destroy
     respond_to do |format|
-      format.html { redirect_to flights_url, notice: 'Flight was successfuplly destroyed.' }
+      format.html { redirect_to flights_url, notice: 'Flight was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,7 +68,7 @@ class FlightsController < ApplicationController
   def search( origin = nil, destination = nil )
     # binding.pry
     if params[:origin] && params[:destination]
-      @flight = Flight.where(:origin => params[:origin], :destination => params[:destination])
+      @flights = Flight.where(:origin => params[:origin], :destination => params[:destination])
     end
     # binding.pry
 

@@ -5,9 +5,7 @@
   <select name="origin" id="origin">
       <option value="">Where are you?</option>
         <% Flight.pluck(:origin).uniq.each do |city|%>
-            <!-- <div class="city"> -->
             <option value="<%= city %>" id="<%= city %>"><%= city %></option>
-            <!-- </div> -->
         <%end%>
   </select>
 
@@ -22,5 +20,8 @@
       <input type="submit" value="Search Flights" class="btn btn-success">  
   </div>
   <hr>
-
 </form>
+
+<% if params[:origin]!= nil && params[:destination] != nil %>
+  <%= render "flightresults" %>
+<% end %>
