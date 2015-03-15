@@ -15,12 +15,14 @@
   <%= @airplane.aisles %>
 </p>
 
+
+
 <%= link_to 'Edit', edit_airplane_path(@airplane) %> |
 <%= link_to 'Back', airplanes_path %>
 
 <hr>
 <p>
   <strong>Associated Flights:</strong>
-  <%= @airplane.aisles %>
+  <%= @airplane.flights.count %>
 </p>
 <hr>
