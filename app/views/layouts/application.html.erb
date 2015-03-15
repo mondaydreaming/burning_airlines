@@ -43,51 +43,81 @@
   <%= yield %>
   </div>
 
+<div id="container">
 
-<!-- TEMPLATE FOR FLIGHT SEARCH -->
-<script id="flightListView-template" type="text/x-underscore-template">
-  <table>
-    <thead>
-      <tr>
-        <th>Flight number</th>
-        <th>Origin</th>
-        <th>Destination</th>
-        <th>Date</th>
-        <th>Plane</th>
-        <th>Seats Available</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <!-- TEMPLATE FOR FLIGHT SEARCH -->
+  <script id="flightListView-template" type="text/x-underscore-template">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Flight number</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Date</th>
+          <th>Plane</th>
+          <th>Seats Available</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  </table>
-</script>
+    </table>
+  </script>
 
-<script id="individualFlightView-template" type="text/x-underscore-template">
-<h2>This is showing the backbone flights/:id</h2>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Flight Number</th>
-      <th>Origin</th>
-      <th>Destination</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{id}}</td>
-      <td>{{flight_number}}</td>
-      <td>{{origin}}</td>
-      <td>{{destination}}</td>
-    </tr>
-  </tbody>
+  <script id="individualFlightView-template" type="text/x-underscore-template">
+    <h3>This is showing the backbone flights/:id via Backbone</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Flight Number</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Departure Date</th>
+          <th>Airplane ID</th>
+          <th>Airplane Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{id}}</td>
+          <td>{{flight_number}}</td>
+          <td>{{origin}}</td>
+          <td>{{destination}}</td>
+          <td>{{date}}</td>
+          <td>{{airplane_id}}</td>
+          <td></td>
+        </tr>
+      </tbody>
 
-</table>
-</script>
+    </table>
+  </script>
 
-<!-- DISPLAY SEATING PLAN -->
-<h2>This is the Seating Plan</h2>
-<div id="seats">
+    <script id="individualAirplaneView-template" type="text/x-underscore-template">
+    <h3>This is showing the backbone view of the plane for this flight</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Rows</th>
+          <th>Aisles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{name}}</td>
+          <td>{{rows}}</td>
+          <td>{{aisles}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </script>
+
+  <!-- DISPLAY SEATING PLAN -->
+  <div id="seats">
+    <h2>This is the Seating Plan</h2>
+  </div>
+
 </div>
 
 
