@@ -15,6 +15,7 @@ BurningAirlines.Routers.Flights = Backbone.Router.extend({
 
   viewFlight: function (id) {
     $("#main").empty();
+    $("#seats").show();
     BurningAirlines.Collections.flights.fetch().done(function () {
       var currentFlight = BurningAirlines.Collections.flights.get(id);
       var individualFlightHTML = $("#individualFlightView-template").html();
@@ -29,9 +30,10 @@ BurningAirlines.Routers.Flights = Backbone.Router.extend({
       var individualAirplaneHTMLTemplate = _.template(individualAirplaneHTML);
       $("#main").append(individualAirplaneHTMLTemplate( currentAirplane.attributes ));
       
-      var airplaneSeatsViewHTML = $("#airplaneSeatsView-template").html();
-      var airplaneSeatsViewHTMLTemplate = _.template(airplaneSeatsViewHTML);
-      $("#main").append(airplaneSeatsViewHTMLTemplate( currentAirplane.attributes ))
+      // ERROR: Handlebars not displaying #seats
+      // var airplaneSeatsViewHTML = $("#airplaneSeatsView-template").html();
+      // var airplaneSeatsViewHTMLTemplate = _.template(airplaneSeatsViewHTML);
+      // $("#main").append(airplaneSeatsViewHTMLTemplate());
       // BurningAirlines.Collections.airplanes.fetch({  data: { origin: "Sydney", destination: "Melbourne"  }  })
     });
 

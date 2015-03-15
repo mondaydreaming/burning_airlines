@@ -65,7 +65,7 @@ _.templateSettings = {
 var BurningAirlines = BurningAirlines || {};
 
   $(document).ready(function() {
-    
+    $("#seats").hide();
     BurningAirlines.routers = new BurningAirlines.Routers.Flights();
     BurningAirlines.Collections.flights = new BurningAirlines.Collections.Flights();
     BurningAirlines.Collections.airplanes = new BurningAirlines.Collections.Airplanes();
