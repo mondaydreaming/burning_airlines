@@ -47,7 +47,9 @@ $(document).ready(function () {
   $("div#seats div").click(function () {
     var aisle = $(this).data("aisle");
     var row = $(this).data("row");
+    $(this).css({background: "green"});
     console.log("Seat: " + row + aisle);
+
   });
 
 // TODO: onclick turn seat red?
